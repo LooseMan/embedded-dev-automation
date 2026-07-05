@@ -1,0 +1,4 @@
+all.yml
+*.qcow2
+.terraform/
+terraform.*
