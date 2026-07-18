@@ -1,0 +1,2 @@
+# for Python v3.12.3
+fastapi[standard]==0.139.2
