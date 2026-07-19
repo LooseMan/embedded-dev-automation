@@ -1,0 +1,5 @@
+# for Python v3.12.3
+alembic==1.18.5
+asyncpg==0.31.0
+fastapi[standard]==0.139.2
+sqlalchemy==2.0.51
