@@ -1,3 +1,5 @@
+# DBテーブルを定義する
+
 import datetime
 
 from sqlalchemy import String, Text, DateTime, text
