@@ -2,3 +2,5 @@ all.yml
 *.qcow2
 .terraform/
 terraform.*
+.venv/
+__pycache__/
