@@ -1,6 +1,8 @@
+# DB操作を定義する
+
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db_models import APILog
+from app.model import APILog
 
 async def insert_api_log(db: AsyncSession, api: str, phase: str, result: str, message: str):
     # データをオブジェクトとして作成（SQLの文字列結合をしないので安全）

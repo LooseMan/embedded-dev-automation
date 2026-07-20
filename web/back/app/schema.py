@@ -1,4 +1,4 @@
-# Rest APIのリクエストボディのモデルを定義するために、PydanticのBaseModelを使用します。
+# APIの入出力を定義する
 
 from pydantic import BaseModel
 
