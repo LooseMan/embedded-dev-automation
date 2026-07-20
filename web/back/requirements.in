@@ -1,5 +1,12 @@
 # for Python v3.12.3
+
+# for app
 alembic==1.18.5
 asyncpg==0.31.0
 fastapi[standard]==0.139.2
 sqlalchemy==2.0.51
+
+# for test
+pytest==9.1.1
+httpx==0.28.1
+pytest-asyncio==1.4.0
