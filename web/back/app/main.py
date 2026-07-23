@@ -30,3 +30,23 @@ async def add(
     db: AsyncSession = Depends(get_db)
 ) -> AddResponse:
     return await calc_add(request, db)
+
+# 非同期関数内でtime.sleep()を使うと、FastAPIの非同期処理がブロックされてしまうため、注意が必要です。
+@app.post("/bad_sleep", response_model=AddResponse)
+async def bad_sleep(
+    request: AddRequest,
+    db: AsyncSession = Depends(get_db)
+) -> AddResponse:
+    import time
+    time.sleep(5) # 5秒間スリープするだけの処理
+    return AddResponse(result=0)
+
+# 非同期関数内でasyncio.sleep()を使うと、FastAPIの非同期処理がブロックされないため、推奨されます。
+@app.post("/good_sleep", response_model=AddResponse)
+async def good_sleep(
+    request: AddRequest,
+    db: AsyncSession = Depends(get_db)
+) -> AddResponse:
+    import asyncio
+    await asyncio.sleep(5) # 5秒間スリープするだけの処理
+    return AddResponse(result=0)

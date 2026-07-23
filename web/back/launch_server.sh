@@ -13,6 +13,9 @@ done
 # Check if the container is already running
 if [ "$(docker ps -q -f name=my-postgres)" ]; then
 	echo "PostgreSQL container is already running."
+elif [ "$(docker ps -aq -f name=my-postgres)" ]; then
+    echo "Starting existing PostgreSQL container..."
+    docker start my-postgres
 else
 	echo "Starting PostgreSQL container..."
 	docker run --name my-postgres \
